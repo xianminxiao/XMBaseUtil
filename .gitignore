@@ -1,6 +1,10 @@
 
 .DS_Store
 
+!default.perspectivev3
+xcuserdata/
+xcshareddata/
+
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
@@ -11,7 +15,3 @@
 *.moved-aside
 *.xcuserstate
 *.xccheckout
-
-!default.perspectivev3
-xcuserdata/
-xcshareddata/
