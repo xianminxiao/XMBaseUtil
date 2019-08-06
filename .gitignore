@@ -1,2 +1,17 @@
 
 .DS_Store
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Other
+*.moved-aside
+*.xcuserstate
+*.xccheckout
+
+!default.perspectivev3
+xcuserdata/
+xcshareddata/
