@@ -14,7 +14,7 @@
 		8BD3E39A22F9756D002061C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD3E39822F9756D002061C2 /* LaunchScreen.storyboard */; };
 		8BD3E39D22F9756D002061C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3E39C22F9756D002061C2 /* main.m */; };
 		8BD3E3A622F975BC002061C2 /* XMModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3E3A522F975BC002061C2 /* XMModel.mm */; };
-		8BD3E3AA22F980FB002061C2 /* NSDataEx.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3E3A922F980FB002061C2 /* NSDataEx.mm */; };
+		8BD3E3AA22F980FB002061C2 /* NSData+MD5.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3E3A922F980FB002061C2 /* NSData+MD5.mm */; };
 		8BD3E3AE22F9841C002061C2 /* ToolFunctions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3E3AD22F9841C002061C2 /* ToolFunctions.mm */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +31,8 @@
 		8BD3E39C22F9756D002061C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BD3E3A422F975BC002061C2 /* XMModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMModel.h; sourceTree = "<group>"; };
 		8BD3E3A522F975BC002061C2 /* XMModel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = XMModel.mm; sourceTree = "<group>"; };
-		8BD3E3A822F980FB002061C2 /* NSDataEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDataEx.h; sourceTree = "<group>"; };
-		8BD3E3A922F980FB002061C2 /* NSDataEx.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NSDataEx.mm; sourceTree = "<group>"; };
+		8BD3E3A822F980FB002061C2 /* NSData+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
+		8BD3E3A922F980FB002061C2 /* NSData+MD5.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSData+MD5.mm"; sourceTree = "<group>"; };
 		8BD3E3AC22F9841C002061C2 /* ToolFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolFunctions.h; sourceTree = "<group>"; };
 		8BD3E3AD22F9841C002061C2 /* ToolFunctions.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ToolFunctions.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,8 +95,8 @@
 		8BD3E3A722F98057002061C2 /* SysClassExt */ = {
 			isa = PBXGroup;
 			children = (
-				8BD3E3A822F980FB002061C2 /* NSDataEx.h */,
-				8BD3E3A922F980FB002061C2 /* NSDataEx.mm */,
+				8BD3E3A822F980FB002061C2 /* NSData+MD5.h */,
+				8BD3E3A922F980FB002061C2 /* NSData+MD5.mm */,
 			);
 			path = SysClassExt;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 			files = (
 				8BD3E39222F9756C002061C2 /* ViewController.m in Sources */,
 				8BD3E3AE22F9841C002061C2 /* ToolFunctions.mm in Sources */,
-				8BD3E3AA22F980FB002061C2 /* NSDataEx.mm in Sources */,
+				8BD3E3AA22F980FB002061C2 /* NSData+MD5.mm in Sources */,
 				8BD3E39D22F9756D002061C2 /* main.m in Sources */,
 				8BD3E3A622F975BC002061C2 /* XMModel.mm in Sources */,
 				8BD3E38F22F9756C002061C2 /* AppDelegate.m in Sources */,

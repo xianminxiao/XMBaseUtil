@@ -8,7 +8,7 @@
 
 #import "XMModel.h"
 #include <objc/runtime.h>
-#import "NSDataEx.h"
+#import "NSData+MD5.h"
 
 @implementation XMModel
 

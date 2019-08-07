@@ -6,7 +6,7 @@
 //  Copyright © 2019 xianminxiao. All rights reserved.
 //
 
-#import "NSDataEx.h"
+#import "NSData+MD5.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "ToolFunctions.h"
 
