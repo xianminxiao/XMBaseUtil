@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BB9D83522FACDED00C36485 /* NSTimer+Weak.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9D83422FACDED00C36485 /* NSTimer+Weak.m */; };
+		8BB9D83822FAD82A00C36485 /* ThirdInvocationWeakObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9D83722FAD82A00C36485 /* ThirdInvocationWeakObject.m */; };
 		8BD3E38F22F9756C002061C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3E38E22F9756C002061C2 /* AppDelegate.m */; };
 		8BD3E39222F9756C002061C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3E39122F9756C002061C2 /* ViewController.m */; };
 		8BD3E39522F9756C002061C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD3E39322F9756C002061C2 /* Main.storyboard */; };
@@ -19,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8BB9D83322FACDED00C36485 /* NSTimer+Weak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Weak.h"; sourceTree = "<group>"; };
+		8BB9D83422FACDED00C36485 /* NSTimer+Weak.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Weak.m"; sourceTree = "<group>"; };
+		8BB9D83622FAD82A00C36485 /* ThirdInvocationWeakObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdInvocationWeakObject.h; sourceTree = "<group>"; };
+		8BB9D83722FAD82A00C36485 /* ThirdInvocationWeakObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdInvocationWeakObject.m; sourceTree = "<group>"; };
 		8BD3E38A22F9756C002061C2 /* XMBaseUtil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMBaseUtil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD3E38D22F9756C002061C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8BD3E38E22F9756C002061C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,6 +103,8 @@
 			children = (
 				8BD3E3A822F980FB002061C2 /* NSData+MD5.h */,
 				8BD3E3A922F980FB002061C2 /* NSData+MD5.mm */,
+				8BB9D83322FACDED00C36485 /* NSTimer+Weak.h */,
+				8BB9D83422FACDED00C36485 /* NSTimer+Weak.m */,
 			);
 			path = SysClassExt;
 			sourceTree = "<group>";
@@ -106,6 +114,8 @@
 			children = (
 				8BD3E3AC22F9841C002061C2 /* ToolFunctions.h */,
 				8BD3E3AD22F9841C002061C2 /* ToolFunctions.mm */,
+				8BB9D83622FAD82A00C36485 /* ThirdInvocationWeakObject.h */,
+				8BB9D83722FAD82A00C36485 /* ThirdInvocationWeakObject.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -180,7 +190,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB9D83522FACDED00C36485 /* NSTimer+Weak.m in Sources */,
 				8BD3E39222F9756C002061C2 /* ViewController.m in Sources */,
+				8BB9D83822FAD82A00C36485 /* ThirdInvocationWeakObject.m in Sources */,
 				8BD3E3AE22F9841C002061C2 /* ToolFunctions.mm in Sources */,
 				8BD3E3AA22F980FB002061C2 /* NSData+MD5.mm in Sources */,
 				8BD3E39D22F9756D002061C2 /* main.m in Sources */,
