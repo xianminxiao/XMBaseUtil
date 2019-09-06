@@ -10,10 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XMModel : NSObject <NSCoding>
-{
-    
-}
+@interface XMModel : NSObject
 
 - (NSString*)genMD5ByAllProperty;
 
