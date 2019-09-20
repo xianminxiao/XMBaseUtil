@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B461865232778DF00177D2C /* LightSafeStorage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8B461864232778DF00177D2C /* LightSafeStorage.mm */; };
+		8B46186823277E5400177D2C /* NSStringEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B46186723277E5400177D2C /* NSStringEX.m */; };
 		8BB9D83522FACDED00C36485 /* NSTimer+Weak.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9D83422FACDED00C36485 /* NSTimer+Weak.m */; };
 		8BB9D83822FAD82A00C36485 /* ThirdInvocationWeakObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9D83722FAD82A00C36485 /* ThirdInvocationWeakObject.m */; };
 		8BD3E38F22F9756C002061C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD3E38E22F9756C002061C2 /* AppDelegate.m */; };
@@ -21,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B461863232778DF00177D2C /* LightSafeStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LightSafeStorage.h; sourceTree = "<group>"; };
+		8B461864232778DF00177D2C /* LightSafeStorage.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LightSafeStorage.mm; sourceTree = "<group>"; };
+		8B46186623277E5400177D2C /* NSStringEX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSStringEX.h; sourceTree = "<group>"; };
+		8B46186723277E5400177D2C /* NSStringEX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringEX.m; sourceTree = "<group>"; };
+		8B461869232786AA00177D2C /* ModuleDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleDefine.h; sourceTree = "<group>"; };
 		8BB9D83322FACDED00C36485 /* NSTimer+Weak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Weak.h"; sourceTree = "<group>"; };
 		8BB9D83422FACDED00C36485 /* NSTimer+Weak.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Weak.m"; sourceTree = "<group>"; };
 		8BB9D83622FAD82A00C36485 /* ThirdInvocationWeakObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdInvocationWeakObject.h; sourceTree = "<group>"; };
@@ -54,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B4618622327787C00177D2C /* LightSafeStorage */ = {
+			isa = PBXGroup;
+			children = (
+				8B461863232778DF00177D2C /* LightSafeStorage.h */,
+				8B461864232778DF00177D2C /* LightSafeStorage.mm */,
+			);
+			path = LightSafeStorage;
+			sourceTree = "<group>";
+		};
 		8BD3E38122F9756C002061C2 = {
 			isa = PBXGroup;
 			children = (
@@ -73,7 +89,9 @@
 		8BD3E38C22F9756C002061C2 /* XMBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
+				8B461869232786AA00177D2C /* ModuleDefine.h */,
 				8BD3E3AB22F983BD002061C2 /* Common */,
+				8B4618622327787C00177D2C /* LightSafeStorage */,
 				8BD3E3A722F98057002061C2 /* SysClassExt */,
 				8BD3E3A322F97574002061C2 /* XMModel */,
 				8BD3E38D22F9756C002061C2 /* AppDelegate.h */,
@@ -105,6 +123,8 @@
 				8BD3E3A922F980FB002061C2 /* NSData+MD5.mm */,
 				8BB9D83322FACDED00C36485 /* NSTimer+Weak.h */,
 				8BB9D83422FACDED00C36485 /* NSTimer+Weak.m */,
+				8B46186623277E5400177D2C /* NSStringEX.h */,
+				8B46186723277E5400177D2C /* NSStringEX.m */,
 			);
 			path = SysClassExt;
 			sourceTree = "<group>";
@@ -190,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B46186823277E5400177D2C /* NSStringEX.m in Sources */,
 				8BB9D83522FACDED00C36485 /* NSTimer+Weak.m in Sources */,
 				8BD3E39222F9756C002061C2 /* ViewController.m in Sources */,
 				8BB9D83822FAD82A00C36485 /* ThirdInvocationWeakObject.m in Sources */,
@@ -198,6 +219,7 @@
 				8BD3E39D22F9756D002061C2 /* main.m in Sources */,
 				8BD3E3A622F975BC002061C2 /* XMModel.mm in Sources */,
 				8BD3E38F22F9756C002061C2 /* AppDelegate.m in Sources */,
+				8B461865232778DF00177D2C /* LightSafeStorage.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

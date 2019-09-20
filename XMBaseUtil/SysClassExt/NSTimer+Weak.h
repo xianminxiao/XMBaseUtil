@@ -5,6 +5,7 @@
 //  Created by xianminxiao on 2019/8/7.
 //  Copyright © 2019 xianminxiao. All rights reserved.
 //
+//  解决低版本NSTimer导致强引用，内存泄露问题
 
 #import <Foundation/Foundation.h>
 
