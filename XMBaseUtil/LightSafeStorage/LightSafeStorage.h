@@ -5,6 +5,7 @@
 //  Created by xianminxiao on 2019/9/10.
 //  Copyright © 2019 xianminxiao. All rights reserved.
 //
+//  线程安全轻量级存储，适用于经常记录用户记录于本地
 
 #import <Foundation/Foundation.h>
 
