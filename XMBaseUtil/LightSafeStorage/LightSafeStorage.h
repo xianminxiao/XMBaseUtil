@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void (^LightSafeStorageWriteBlock) (LightSafeStorage *storage, NSString* __nonnull key, id<NSCoding> object, BOOL bSuccess);
 typedef void (^LightSafeStorageReadBlock)  (LightSafeStorage *storage, NSString* __nonnull key, id<NSCoding> __nonnull object, BOOL bSuccess);
 typedef void (^LightSafeStorageRemoveBlock)(LightSafeStorage *storage, NSString* __nonnull key, BOOL bSuccess);
+typedef void (^LightSafeStorageClearBlock) (LightSafeStorage *storage, BOOL bSuccess);
 
 @protocol NFSuspectApplyNotifyManagerDelegate <NSObject>
 
@@ -32,14 +33,15 @@ typedef void (^LightSafeStorageRemoveBlock)(LightSafeStorage *storage, NSString*
 - (instancetype)init NS_UNAVAILABLE;
 
 /**
- *  使用默认的文件路径  Document/LYStorage/nameSpace/key
+ *  使用默认的文件路径  Document/LYStorage/md5(nameSpace name)
+ *  其中无subNameSpace，默认为nil
  *  @param nameSpace 不同的nameSpace，缓存路径不同
  */
 - (instancetype)initWithNameSpace:(Class)nameSpace;
 
 /**
- *  参数主要影响文件路径  比如Library/LYStorage/nameSpace/uin/key
- *  @param nameSpace 不同的nameSpace，缓存路径不同
+ *  参数主要影响文件路径  比如Library/LYStorage/md5(nameSpace name)/md5(subNamespace)/key
+ *  @param nameSpace 不同的nameSpace，缓存路径不同，直接用class，免得namespace容易一样冲突
  *  @param subNameSpace   根据Uin创建不同的文件目录
  *  @param isInLibraryCache   存在library还是documentr
  */
@@ -112,6 +114,12 @@ typedef void (^LightSafeStorageRemoveBlock)(LightSafeStorage *storage, NSString*
 *
 */
 - (void)clearAllMemoryCache;
+
+/**
+* @brief      异步移除当前namespace内存以及磁盘中所有缓存
+*
+*/
+- (void)asyncClearAllCacheWithBlock:(nullable LightSafeStorageClearBlock)block;
 
 
 

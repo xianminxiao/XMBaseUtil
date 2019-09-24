@@ -15,19 +15,19 @@
     dispatch_queue_t      _ioQueue;
 }
 
-@property(nonatomic, strong) Class             nameSpace;               //磁盘路径构成部分,各个业务需要不同的nameSpace
+@property(nonatomic, strong) Class             nameSpace;               // 磁盘路径构成部分,各个业务需要不同的nameSpace
 @property(nonatomic, strong) NSString*         subNameSpace;            // 磁盘路径构成部分,各个业务需要不同的nameSpace
 @property(nonatomic, strong) NSString*         rootPath;                // 磁盘缓存的root路径  根据nameSpace，isInLibraryCache，pathWithUin来生成，不建议修改，默认为 rootPath/key为文件路径 或者rootPath/uin/key
 
 @property(nonatomic, assign) BOOL              isInLibraryCache;        // 存取到Library/caches目录还是Document目录，默认存在Document目录
 
-@property(nonatomic, strong) NSCache*          memoryCache;
+@property(nonatomic, strong) NSCache*          memoryCache;             // 内存缓存
 
 @end
 
 @implementation LightSafeStorage
 
-
+#pragma mark - public method
 - (instancetype)initWithNameSpace:(Class)nameSpace
 {
     return [self initWithNameSpace:nameSpace subNameSpace:nil inLibraryCache:NO];
@@ -241,6 +241,53 @@
     [_memoryCache removeAllObjects];
 }
 
+- (void)asyncClearAllCacheWithBlock:(nullable LightSafeStorageClearBlock)block
+{
+    NSString* log = [NSString stringWithFormat:@"%s, block %s nil", __FUNCTION__, block?"not":"is"];
+    [self printLog:log];
+
+    __weak __typeof__(self) weakSelf = self;
+    dispatch_barrier_async(_ioQueue, ^{
+        __strong __typeof(self) strongSelf = weakSelf;
+        if (!strongSelf || ![strongSelf respondsToSelector:@selector(initWithNameSpace:subNameSpace:inLibraryCache:)])
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (block)
+                    block(strongSelf, NO);
+            });
+            return;
+        }
+        @try {
+            [strongSelf.memoryCache removeAllObjects];
+            BOOL success = YES;
+            NSFileManager *fileManager =  [NSFileManager defaultManager];
+            BOOL bFileExist = [fileManager fileExistsAtPath:strongSelf.rootPath isDirectory:nil];
+            if (bFileExist)
+                success = [fileManager removeItemAtPath:strongSelf.rootPath error:nil];
+            NSString* resultLog = [NSString stringWithFormat:@"%s, path=%s, bFileExist=%d, success=%d", __FUNCTION__, strongSelf.rootPath.UTF8String, bFileExist, success];
+            [strongSelf printLog:resultLog];
+            
+            if (block)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    block(strongSelf, success);
+                });
+            }
+        }
+        @catch (NSException *e) {
+            NSString* eName = e.name==nil?@"":e.name;
+            NSString* eReason = e.reason==nil?@"":e.reason;
+            NSString* resultLog = [NSString stringWithFormat:@"%s, exception name=%s, reason=%s", __FUNCTION__, eName.UTF8String, eReason.UTF8String];
+            [strongSelf printLog:resultLog];
+            if (!block)
+                return;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                block(strongSelf, NO);
+            });
+        }
+    });
+}
+
 #pragma mark - private method
 - (NSString *)rootPath
 {
@@ -248,8 +295,8 @@
     {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(self.isInLibraryCache ? NSCachesDirectory : NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *docPath = [paths firstObject];
-        
-        NSString* bussinessPath = [NSString stringWithFormat:@"%@/%@", [MODULE_LIGHT_SAFE_STORAGE MD5String], [_nameSpace MD5String]];
+        NSString* namespaceClassName = NSStringFromClass(_nameSpace);
+        NSString* bussinessPath = [NSString stringWithFormat:@"%@/%@", [MODULE_LIGHT_SAFE_STORAGE MD5String], [namespaceClassName MD5String]];
         if (_subNameSpace)
             bussinessPath = [NSString stringWithFormat:@"%@/%@", bussinessPath, [_subNameSpace MD5String]];
         _rootPath = [docPath stringByAppendingPathComponent:bussinessPath];
