@@ -26,9 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString*)ARGBHexFromUIColor:(UIColor*)color;
 
-- (BOOL)isEqualToColor:(UIColor*)color;
-
-
+- (BOOL)isEqualToColor:(UIColor*)color; 
 
 @end
 
